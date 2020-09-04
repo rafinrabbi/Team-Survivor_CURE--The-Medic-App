@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="10dp"
+    tools:context=".SettingsActivity">
+
+    <ScrollView
+        android:id="@+id/SCROLLVIEW_SETTINGS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="10dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/SETTINGS_NAME"
+                android:layout_width="wrap_content"
+                android:enabled="false"
+                android:textSize="15dp"
+                android:layout_height="wrap_content"
+                android:hint="Enter name"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/SETTINGS_EMAIL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:textSize="15dp"
+                android:hint="Enter email"
+                android:layout_marginTop="30dp"
+                android:ems="10"
+                android:inputType="textEmailAddress" />
+            <CheckBox
+                android:id="@+id/SETTINGS_ISRECOVERED"
+                android:enabled="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Is recovered from COVID19"/>
+
+            <Button
+                android:id="@+id/SETTINGS_LOC_UPDATE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Set Location"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:textSize="15dp"
+                android:text="The section below is needed for generating health related suggestions. We don't share this with any other user." />
+
+            <CheckBox
+                android:id="@+id/Drgus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Addicted to drugs."/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:textSize="20dp"
+                android:text="More fields coming soon..." />
+            <Button
+                android:id="@+id/BUTTON_UPDATE_SETTINGS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:text="Update"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
