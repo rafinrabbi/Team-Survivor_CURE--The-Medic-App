@@ -22,13 +22,22 @@
             android:text="PHONE NO: " />
 
     </LinearLayout>
+
     <ImageButton
         android:id="@+id/BUTTON_CALL_DONOR"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginRight="10dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="0dp"
+        android:adjustViewBounds="true"
+        android:padding="10dp"
         android:layout_alignParentRight="true"
-        android:src="@drawable/call_icon">
-    </ImageButton>
+        android:background="#0000"
+        android:scaleType="fitCenter"
+        android:src="@drawable/call2_icon" />
+
+
 
 </RelativeLayout>

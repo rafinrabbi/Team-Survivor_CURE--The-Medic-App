@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -19,7 +20,6 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 public class MedicineActivity extends AppCompatActivity {
@@ -32,6 +32,8 @@ public class MedicineActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medicine);
+        getSupportActionBar().setTitle("CURE");
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xFFFF6666));
         phoneNo = getIntent().getStringExtra("PhoneNo");
         db = FirebaseFirestore.getInstance();
         medicineView = (ListView) findViewById(R.id.LISTVIEW_PHARMACY);
@@ -85,6 +87,6 @@ public class MedicineActivity extends AppCompatActivity {
     }
 
     private static final String[] MEDICINES = new String[] {
-            "Napa", "Metfo", "Paracetamol", "Flux", "OPPO"
+            "Napa", "Metfo", "Paracetamol", "Flux", "Fexo", "Fenadin 120 mg","Acetaminophen", "Ativan","Naproxen","Xanax"
     };
 }

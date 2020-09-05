@@ -1,5 +1,6 @@
 package com.example.covid2;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -23,6 +24,8 @@ public class Options extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
         setContentView(R.layout.activity_options);
         db = FirebaseFirestore.getInstance();
         phoneNo = getIntent().getStringExtra("PhoneNo");
@@ -38,6 +41,7 @@ public class Options extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i =  new Intent(Options.this, EmergencyActivity.class);
+                i.putExtra("PhoneNo", phoneNo);
                 finish();
                 startActivity(i);
             }

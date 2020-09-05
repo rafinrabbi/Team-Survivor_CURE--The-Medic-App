@@ -7,11 +7,20 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:layout_width="235dp"
+        android:layout_height="165dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/logo_icon">
+
+    </ImageView>
+
     <EditText
         android:id="@+id/PHONE_NO_FIELD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="212dp"
+        android:layout_marginTop="70dp"
         android:ems="10"
         android:layout_gravity="center"
         android:hint="Enter phone number"
@@ -26,6 +35,13 @@
         android:ems="10"
         android:hint="Enter password"
         android:inputType="textPassword" />
+<!--    <ImageButton-->
+<!--        android:layout_width="200px"-->
+<!--        android:layout_height="80px"-->
+<!--        android:src="@drawable/button_icon"-->
+<!--        >-->
+<!--        -->
+<!--    </ImageButton>-->
 
     <Button
         android:id="@+id/BUTTON_SIGN_IN"
@@ -33,7 +49,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="16dp"
-        android:text="Sign in" />
+        android:text="Sign in"
+        android:background= "#A3E3ED"
+        />
 
     <Button
         android:id="@+id/BUTTON_GUEST"
@@ -41,13 +59,23 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="16dp"
+        android:background= "#A3E3ED"
         android:text="GUEST" />
 
     <Button
         android:id="@+id/BUTTON_SIGN_UP"
-        android:layout_width="wrap_content"
+        android:layout_width="136dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
+
         android:text="Sign up" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Developed by Team Survivor"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        />
 </LinearLayout>

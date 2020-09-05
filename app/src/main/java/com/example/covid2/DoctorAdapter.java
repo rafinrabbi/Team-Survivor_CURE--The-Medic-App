@@ -3,7 +3,6 @@ package com.example.covid2;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,12 +12,9 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
 import java.util.ArrayList;
 
-public class DonorAdapter extends ArrayAdapter<DonorInfo> {
+public class DoctorAdapter extends ArrayAdapter<DonorInfo> {
     private Context c;
     private static class ViewHolder {
         TextView name;
@@ -26,7 +22,7 @@ public class DonorAdapter extends ArrayAdapter<DonorInfo> {
         ImageButton call;
     }
 
-    public DonorAdapter(Context context, ArrayList<DonorInfo> users) {
+    public DoctorAdapter(Context context, ArrayList<DonorInfo> users) {
         super(context, R.layout.donor_info, users);
         c = context;
     }
@@ -36,10 +32,10 @@ public class DonorAdapter extends ArrayAdapter<DonorInfo> {
         // Get the data item for this position
         final DonorInfo user = getItem(position);
         // Check if an existing view is being reused, otherwise inflate the view
-        ViewHolder viewHolder; // view lookup cache stored in tag
+        DoctorAdapter.ViewHolder viewHolder; // view lookup cache stored in tag
         if (convertView == null) {
             // If there's no view to re-use, inflate a brand new view for row
-            viewHolder = new ViewHolder();
+            viewHolder = new DoctorAdapter.ViewHolder();
             LayoutInflater inflater = LayoutInflater.from(getContext());
             convertView = inflater.inflate(R.layout.donor_info, parent, false);
             viewHolder.name = (TextView) convertView.findViewById(R.id.DONOR_NAME);
@@ -49,7 +45,7 @@ public class DonorAdapter extends ArrayAdapter<DonorInfo> {
             convertView.setTag(viewHolder);
         } else {
             // View is being recycled, retrieve the viewHolder object from tag
-            viewHolder = (ViewHolder) convertView.getTag();
+            viewHolder = (DoctorAdapter.ViewHolder) convertView.getTag();
         }
         // Populate the data from the data object via the viewHolder object
         // into the template view.
@@ -59,7 +55,7 @@ public class DonorAdapter extends ArrayAdapter<DonorInfo> {
             @Override
             public void onClick(View v) {
                 //Toast.makeText(parent.getContext(), "Under development", Toast.LENGTH_LONG).show();
-                if(((PlasmaActivity) c).checkPermission(Manifest.permission.CALL_PHONE)){
+                if(((MedicalActivity) c).checkPermission(Manifest.permission.CALL_PHONE)){
                     try {
                         c.startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:+88"+user.phoneNo)));
                     }catch (Exception e){

@@ -2,8 +2,11 @@ package com.example.covid2;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -23,6 +26,7 @@ import java.util.List;
 import java.util.Map;
 
 public class MedicalActivity extends AppCompatActivity {
+    private static final int MAKE_CALL_PERMISSION_REQUEST_CODE = 1;
     private Spinner mDiv, mArea;
     private ListView doctors;
     private Button fetch;
@@ -32,6 +36,8 @@ public class MedicalActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medical);
+        getSupportActionBar().setTitle("CURE");
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xFFFF6666));
         phoneNo = getIntent().getStringExtra("PhoneNo");
         db = FirebaseFirestore.getInstance();
         mDiv = (Spinner) findViewById(R.id.SPINNER_MEDICAL_DIVSION);
@@ -65,7 +71,9 @@ public class MedicalActivity extends AppCompatActivity {
         mArea.setAdapter(areaAdapter);
         ArrayList<DonorInfo> arrayOfDonors = new ArrayList<DonorInfo>();
 
-        final DonorAdapter dAdapter = new DonorAdapter(this, arrayOfDonors);
+       // final DonorAdapter dAdapter = new DonorAdapter(this, arrayOfDonors);
+
+        final DoctorAdapter dAdapter = new DoctorAdapter(this, arrayOfDonors);
         doctors.setAdapter(dAdapter);
         fetch.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,7 +83,7 @@ public class MedicalActivity extends AppCompatActivity {
         });
     }
 
-    private void populateView(String division, String area, final DonorAdapter dAdapter){
+    private void populateView(String division, String area, final DoctorAdapter dAdapter){
         Toast.makeText(MedicalActivity.this, division+ " "+area,Toast.LENGTH_LONG).show();
         db.collection("DOCTORS").whereEqualTo("division", division).whereEqualTo("area", area)
                 .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -104,5 +112,19 @@ public class MedicalActivity extends AppCompatActivity {
         options.putExtra("PhoneNo", phoneNo);
         finish();
         startActivity(options);
+    }
+
+    public boolean checkPermission(String permission) {
+        return ContextCompat.checkSelfPermission(this, permission) == PackageManager.PERMISSION_GRANTED;
+    }
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch(requestCode) {
+            case MAKE_CALL_PERMISSION_REQUEST_CODE :
+                if (grantResults.length > 0 && (grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
+
+                }
+                return;
+        }
     }
 }

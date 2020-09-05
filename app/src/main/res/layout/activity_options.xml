@@ -12,124 +12,210 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="60dp"
         android:text="Today's update"
+        android:layout_gravity="center"
         android:textSize="30dp"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="36dp" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_gravity="center"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cases:"
+                android:textSize="20dp" />
+            <TextView
+                android:id="@+id/NEW_CASES"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25dp"
+                android:layout_marginLeft="10dp"
+                android:text="Loading..." />
+            />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            >
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Deaths:"
+                android:textSize="20dp" />
+            <TextView
+                android:id="@+id/NEW_DEATHS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25dp"
+                android:textColor="@android:color/holo_red_light"
+                android:layout_marginLeft="10dp"
+                android:text="Loading..." />
+            />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recovered:"
+                android:textSize="20dp" />
+            <TextView
+                android:id="@+id/NEW_RECOVERED"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textSize="25dp"
+                android:textColor="@android:color/holo_green_light"
+                android:text="Loading..." />
+            />
+        </LinearLayout>
+
+    </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp">
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New cases:"
-            android:textSize="20dp" />
-        <TextView
-            android:id="@+id/NEW_CASES"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="19dp"
-            android:textSize="25dp"
-            android:text="Loading..." />
-        />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New deaths:"
-            android:textSize="20dp" />
-        <TextView
-            android:id="@+id/NEW_DEATHS"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="25dp"
-            android:textColor="@android:color/holo_red_light"
-            android:layout_marginLeft="10dp"
-            android:text="Loading..." />
-        />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Recovered:"
-            android:textSize="20dp" />
-        <TextView
-            android:id="@+id/NEW_RECOVERED"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="80dp">
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/doctor_icon">
+        </ImageView>
+        <Button
+            android:id="@+id/BUTTON_MEDICAL_FACILITY"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:textSize="25dp"
-            android:textColor="@android:color/holo_green_light"
-            android:text="Loading..." />
-        />
+            android:text="Doctor's"
+            android:background= "#EEE8AA" />
+
     </LinearLayout>
 
-    <Button
-        android:id="@+id/BUTTON_MEDICAL_FACILITY"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:text="Doctor's"
-        tools:layout_editor_absoluteX="96dp"
-        tools:layout_editor_absoluteY="410dp" />
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp">
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/medicine_icon">
+        </ImageView>
 
-    <Button
-        android:id="@+id/BUTTON_MEDICINE_CORNER"
-        android:layout_width="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center"
-        android:layout_height="wrap_content"
-        android:text="Medicine Corner"
-        tools:layout_editor_absoluteX="96dp"
-        tools:layout_editor_absoluteY="474dp" />
+        <Button
+            android:id="@+id/BUTTON_MEDICINE_CORNER"
+            android:layout_width="137dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="#B0E0E6"
+            android:text="Medicine Corner" />
 
-    <Button
-        android:id="@+id/BUTTON_PLASMA"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center"
-        android:text="PLASMA"
-        tools:layout_editor_absoluteX="128dp"
-        tools:layout_editor_absoluteY="539dp" />
+    </LinearLayout>
 
-
-
-    <Button
-        android:id="@+id/BUTTON_EMERGENCY"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center"
-        android:text="Emrgency Corner"
-        tools:layout_editor_absoluteX="96dp"
-        tools:layout_editor_absoluteY="605dp" />
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp">
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/plasma_icon">
+        </ImageView>
 
-    <Button
-        android:id="@+id/BUTTON_ACCOUNT_SETTINGS"
+        <Button
+            android:id="@+id/BUTTON_PLASMA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:text="PLASMA"
+            android:background= "#EEE8AA"/>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center"
-        android:text="Settings"
-        tools:layout_editor_absoluteX="134dp"
-        tools:layout_editor_absoluteY="653dp" />
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/emergencycall_icon">
+        </ImageView>
+
+        <Button
+            android:id="@+id/BUTTON_EMERGENCY"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:background="	#B0E0E6"
+            android:text="Emrgency Corner" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/settings_icon">
+        </ImageView>
+
+        <Button
+            android:id="@+id/BUTTON_ACCOUNT_SETTINGS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Settings"
+            android:layout_marginLeft="20dp"
+            android:background= "#EEE8AA"/>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
 </LinearLayout>

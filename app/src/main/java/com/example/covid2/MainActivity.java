@@ -1,6 +1,7 @@
 package com.example.covid2;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.NativeActivity;
@@ -9,6 +10,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -37,7 +40,10 @@ public class MainActivity extends AppCompatActivity {
     private Button signIn, signUp, guest, medical_facility;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
         setContentView(R.layout.activity_main);
         db = FirebaseFirestore.getInstance();
         phone = (EditText) findViewById(R.id.PHONE_NO_FIELD);

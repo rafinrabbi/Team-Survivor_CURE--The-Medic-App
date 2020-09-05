@@ -4,13 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EmergencyActivity">
-
-    <ImageButton
-        android:id="@+id/GAJA"
-        android:layout_width="wrap_content"
+    tools:context=".EmergencyActivity"
+    android:orientation="vertical">
+    <ExpandableListView
+        android:id="@+id/expandableListView"
         android:layout_height="wrap_content"
-        android:src="@drawable/call_icon">
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="0.5dp" />
 
-    </ImageButton>
+
 </LinearLayout>

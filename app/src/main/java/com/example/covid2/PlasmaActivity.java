@@ -10,8 +10,8 @@ import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -42,6 +42,8 @@ public class PlasmaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plasma);
+        getSupportActionBar().setTitle("CURE");
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xFFFF6666));
         phoneNo = getIntent().getStringExtra("PhoneNo");
         db = FirebaseFirestore.getInstance();
         blood_group = (Spinner) findViewById(R.id.SPINNER_PLASMA_BG);
